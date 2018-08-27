@@ -15,17 +15,17 @@
         
         <div class="form-group">
             <label for="data">Data</label>
-            <input type="date" id="data" class="form-control" required autofocus/>        
+            <input id="data" type="date" class="form-control" required autofocus/>
         </div>    
         
         <div class="form-group">
             <label for="quantidade">Quantidade</label>
-            <input type="number" min="1" step="1" id="quantidade" class="form-control" value="1" required/>
+            <input id="quantidade" type="number" min="1" step="1" value="1" class="form-control" required/>
         </div>
         
         <div class="form-group">
             <label for="valor">Valor</label>
-            <input id="valor" type="number" class="form-control"  min="0.01" step="0.01" value="0.0" required />
+            <input id="valor" type="number" min="0.01" step="0.01" value="0.0" class="form-control" required />
         </div>
         
         <button class="btn btn-primary" type="submit">Incluir</button>
@@ -58,6 +58,8 @@
         <tfoot>
         </tfoot>
     </table>
+
+    <script src="js/index.js"></script>
     
 </body>
 </html>
