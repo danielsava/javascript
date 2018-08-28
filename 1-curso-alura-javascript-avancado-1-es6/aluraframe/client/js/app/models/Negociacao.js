@@ -23,7 +23,7 @@ class Negociacao {
          */
 
         //this._data = data;
-        this.data = new Date(data.getTime()); // Gambiarra da programação defensiva.
+        this._data = new Date(data.getTime()); // Gambiarra da programação defensiva.
         this._quantidade = quantidade;
         this._valor = valor;
 
