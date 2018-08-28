@@ -39,9 +39,6 @@ class Negociacao {
 
     }
 
-
-    constructor()
-
     /* Em substituição aos 'get' convencionais getData(), podem ser utilizado as sintaxes abaixo. Dessa forma,
     *  os atributos podem ser acessados da forma 'n1.data' ou 'n1.quantidade'.
     *
