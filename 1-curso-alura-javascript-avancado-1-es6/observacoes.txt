@@ -11,3 +11,5 @@ Observações sobre JavaScript (ES6):
     - let vs var: O let foi outra gambiarra do JavaScript para solucionar o problema de escopo de variável.
                     No JavaScript, as variáveis 'var' possuem escopo global. Com o let, a variável passa a ter
                     escopo de bloco ('{}') como no Java ou C#.
+
+    - typeof (<object>): informa o tipo do objeto

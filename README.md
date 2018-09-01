@@ -1,6 +1,6 @@
 # javascript
 
-"Bem começado, metade feito"
+"Bem comeÃ§ado, metade feito"
 
 Compatibilidade dos Browsers e Polyfills com ES6
  - https://kangax.github.io/compat-table/es6/
