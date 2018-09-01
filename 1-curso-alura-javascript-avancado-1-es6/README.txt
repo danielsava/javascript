@@ -7,3 +7,5 @@ Observações sobre JavaScript (ES6):
 
 
     - Construtor: classes javascript podem ter somente 1 (um) construtor.
+
+    - typeof (<object>) -> mostra o tipo do objeto. Ex.: console.log(typeof(new Date())));

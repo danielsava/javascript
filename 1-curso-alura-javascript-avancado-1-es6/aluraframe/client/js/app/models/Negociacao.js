@@ -27,7 +27,6 @@ class Negociacao {
         this._quantidade = quantidade;
         this._valor = valor;
 
-
         /*
             Tornando os ATRIBUTOS do objeto congelado (imutável). Mas isso se aplica somente aos atributos desta classe.
          *  Isso significa que não posso alterar a data informando outra data (n1.data = new Date()), mas posso alterar
