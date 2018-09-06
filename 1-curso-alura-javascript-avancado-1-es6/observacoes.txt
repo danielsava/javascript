@@ -12,4 +12,21 @@ Observações sobre JavaScript (ES6):
                     No JavaScript, as variáveis 'var' possuem escopo global. Com o let, a variável passa a ter
                     escopo de bloco ('{}') como no Java ou C#.
 
-    - typeof (<object>): informa o tipo do objeto
+    - typeof (<object>): informa o tipo do objeto. Ex.: console.log(typeof(<objeto>))
+
+    - Date:
+            # Array de String ['ano','mes','dia'] ou Array de number [ano,mes,dia]
+            O date aceita, no seu construtor, um array contendo o ano, mês e dia para criar uma data específica.
+            Ex.1: new Date(['2018','08','05'])
+            Ex.2: no caso de ter uma string no formato data = '2018-08-05', a data pode ser criada com new Date(data.split('-'))
+            Ex.3: new Date([2018,08,05])
+
+
+            # String 'ano,mes,dia'
+            Mesmo caso acima, mas agora com uma simples String no formato mostrada acima, separado por vírgula.
+
+    - Array:
+
+            #join
+            Gera uma String juntando os elementos do array separado pelo caracter informado.
+            Ex.: ['2018', '08', '05'].join(', ') ==> gera a seguinte string '2018, 08, 05'.
