@@ -25,8 +25,28 @@ Observações sobre JavaScript (ES6):
             # String 'ano,mes,dia'
             Mesmo caso acima, mas agora com uma simples String no formato mostrada acima, separado por vírgula.
 
+
+            # Padrão
+            new Date(2016, 11, 1) --> desta forma, o mês vai de 0-11. Portanto, neste caso é de 01 Dezembro de 2018
+
     - Array:
 
-            #join
+            # join
             Gera uma String juntando os elementos do array separado pelo caracter informado.
             Ex.: ['2018', '08', '05'].join(', ') ==> gera a seguinte string '2018, 08, 05'.
+
+
+            # map
+            Ex. 1
+            let numeros = [10, 20, 30];
+            let novosNumeros = numeros.map(function(item) { return item + 10 }) --> gera uma array [20, 30, 40].
+
+            Ex. 2
+            let numeros = [10, 20, 30];
+            let novosNumeros = numeros
+                .map(function(item, indice) {
+                    if (indice == 1)
+                        return item;
+                    return item + 10
+                })
+            --> gera uma array [20, 20, 40].
