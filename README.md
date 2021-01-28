@@ -1,13 +1,20 @@
-# javascript
+ # javascript
 
-"Bem começado, metade feito"
+ "Bem começado, metade feito"
 
-Compatibilidade dos Browsers e Polyfills com ES6
- - https://kangax.github.io/compat-table/es6/
+ Compatibilidade dos Browsers e Polyfills com ES6
+  - https://kangax.github.io/compat-table/es6/
  
  
  <br/>
  
+ 
+ ### Plugin Visual Studio Code
+ 
+  * Plugin: Code Runner 
+  * Requisito: Node instalado
+  * Atalho execução: `ctrl + alt + n`
+
  
  ### Variáveis
  
