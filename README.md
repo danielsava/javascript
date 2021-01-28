@@ -16,6 +16,14 @@
   * Atalho execução: `ctrl + alt + n`
 
  
+ ### Comentários
+ 
+ JavaScript aceita as seguintes formas de inserir comentários:
+
+  * `//`: Comentário para uma linha
+  * `/* */`: Comentário multilinhas
+
+
  ### Variáveis
  
  Variáveis em Javascript são criadas através das palavras reservadas: `var, let e const`.
@@ -55,7 +63,7 @@
 
  Existem 3 tipos de operadores: `unários, binários e ternário`.
 
- ##### Unários
+ #### Unários
 
  Operam em cima de uma única variável.
 
@@ -68,7 +76,7 @@
 
  <br/>    
 
- ##### Binário
+ #### Binário
 
  Operadores binários trabalham com dois operandos. Para esta classe, existem os seguintes operadores: `aritméticos, relacionais, 
  lógicos, atribuição `.
@@ -89,14 +97,30 @@
     a *= 7 // a = a * 7
     a -= 2 // a = a - 2
     // Da mesma forma segue para os outros operadores aritméticos
+
+<br/>    
     
-    
- Os operadores `relacionais` são: `> < >= <= !=`. Estes operadores sempre retornam `true` ou `false`.
+ Os operadores `relacionais` são: `> < >= <= != == === !==`. Estes operadores sempre retornam `true` ou `false`.
 
     let a = 3 > 2
     
     console.log(!a) // Resultado: false
+
+<br/>
+
+O Javascript possui dois tipos de operadores relacionais de `igualdade`: `==` e `===`. Esse último leva em consideração o `tipo` da variável (igualdade ou diferença estrita).
+
+    console.log(2 == 2)          // true
+    console.log(2 == '2')        // true
+    console.log(2 == '  2   ')   // true
     
+    console.log(2 === '2')        // false
+    console.log(2 === '  2   ')   // false
+
+    console.log(2 != '2')        // false (2 é igual à 2, independente do tipo)
+    console.log(2 !== '2')       // verdadeiro (number é diferente de string)    
+
+<br/>
 
  Os operadores `lógicos` são: `! !! && ||`.
 
@@ -106,6 +130,7 @@
     
     console.log(vouSair) // true
 
+<br/>
 
  Javascript converte ´qualquer coisa´para `true` ou `false`:
 
@@ -117,7 +142,7 @@
   
  <br/>    
 
- ##### Ternário
+ #### Ternário
 
  O operador ternário faz uso do `?` e do `:` que são utilizados para separar as três partes do operador: 
  `<condicao> ? <true> : <false>`.
@@ -166,7 +191,74 @@
     }
     
     for (let nota of notas) {
-    
+       console.log(nota)
     }
 
+    notas.forEach(nota => console.log(nota))
+
     
+### Estruturas de Controle
+
+Função é o recurso mais importante da linguagem Javascript. Quase tudo, senão tudo, no JavaScript é uma função.
+
+
+    function soma(a, b) {
+      console.log(a + b)
+    }
+
+
+    soma(3, 4)             // Resultado: 3 + 4 = 7
+
+    soma(3, 4, 5, 6, 10)   // Resultado: 3 + 4 = 7
+
+    soma(3)                // Resultado: 3 + undefined = NaN (Not a Number) --> Mas não gera Exception/Erro
+
+    soma()                 // Resultado: undefined + undefined = NaN --> Também não gera erro.
+
+    soma('Teste ', 2)      // Resultado: Teste 2
+
+
+    // Uma forma de tratar os 'undefined'
+    function soma2(a, b) {
+       if(b == undefined) {
+          b = 10
+       }
+       console.log(a + b)
+    }
+
+    // Outra forma de tratar os 'undefined'. Javascript trata os `undefined` como 'false'.
+    function soma3(a, b) {
+       if(b) {
+          b = 10
+       }
+       console.log(a + b)
+    }
+
+    // Ou:
+    function soma3(a, b) {
+       console.log(a + (b || 10))
+    }
+
+
+OBSERVAÇÃO: Nesta duas últimas formas, mostradas no exemplo acima, temos um `bug` pois Javascript resolve o numeral `0` (zero) para `false`. Portanto a chamada da função com `soma(3, 0)` resultaria, nos caso dos exemplos acima, em `13` em vez de `3` (valor correto). 
+
+Portanto, uma das formas de resolver o problema supracitado seria utilizar valores `padrão` para os argumentos:
+
+    function soma(a = 1, b = 0) {
+       console.log(a + b)
+    }
+
+
+Javascript também suporta inserir uma `função` como argumento de funções:
+
+
+    function executar(fn) {
+       fn()
+    }
+
+    // Para certificar que realmente é uma função
+    function executar(fn) {
+       if(fn === 'function') {
+          fn()
+       }
+    }
