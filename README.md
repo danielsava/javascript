@@ -10,7 +10,7 @@
  
  
  ### Plugin Visual Studio Code
- 
+  
   * Plugin: Code Runner 
   * Requisito: Node instalado
   * Atalho execução: `ctrl + alt + n`
@@ -58,7 +58,20 @@
     
     let tamanhoArray = notas.length
     
- 
+  <br/>
+
+  #### String Template
+
+  Abaixo segue alguns exemplos do uso de `Template String`:
+
+    function enfatizar(texto) {
+       return `${texto} !!!`
+    }
+
+
+<br/>
+
+
  ### Operadores    
 
  Existem 3 tipos de operadores: `unários, binários e ternário`.
@@ -197,7 +210,7 @@ O Javascript possui dois tipos de operadores relacionais de `igualdade`: `==` e 
     notas.forEach(nota => console.log(nota))
 
     
-### Estruturas de Controle
+### Funções
 
 Função é o recurso mais importante da linguagem Javascript. Quase tudo, senão tudo, no JavaScript é uma função.
 
@@ -256,9 +269,107 @@ Javascript também suporta inserir uma `função` como argumento de funções:
        fn()
     }
 
-    // Para certificar que realmente é uma função
+    // Para certificar que o argumento de fato é uma função
     function executar(fn) {
-       if(fn === 'function') {
+       if(typeof fn === 'function') { 
           fn()
        }
     }
+
+
+Na última expressão acima, o trecho da condicional if `typeof fn === 'function'` é igual à `typeof(fn) === 'function'`. Isso porque o retorno da expressão `typeof(fn)` é uma string igual à `function` caso o argumento `fn` realmente seja uma função.
+   
+<br/>
+
+Em JavaScript existem duas formas de declarar uma função: `Function Declaration` e `Function Expression`  
+
+
+    // Function Declararion
+    function multiplicar(a = 0, b = 0) {
+       return a * b
+    }
+
+    console.log('Resultado: ' + multiplicar(3, 9))
+
+
+    // Function Expression
+    const funcaoAdicionar = function (a, b) { 
+      return a*b 
+    }
+
+    console.log('Resultado: ' + funcaoAdicionar(3, 9))
+
+
+Nos exemplos acima, em `Function Expression` foi utilizada uma função anônima (não possui nome) por questões de praticidade. Poderia ser dado qualquer nome à função, mas para executar ela deve ser chamada somente pelo nome da varíavel a qual foi atribuída. 
+
+<br/>
+
+#### Composição de Funções
+
+<br/>
+    
+ Abaixos segue um exemplo mais simples de composição de funções.
+    
+    function composicao(fn1, fn2, fn3, valor) {
+       return fn3(fn2(fn1(valor)))               
+    }
+
+    function gritar(texto) {
+       return texto.toUpperCase()
+    }
+
+    function enfatizar(texto) {
+       return `${texto} !!!`
+    }
+
+    function separar(texto) {
+       retrun texto.split('').join(' ')
+    }
+
+    // Chamando a função que faz uso da Composição de Funções
+    const resultado = composicao(gritar, enfatizar, separar, 'cuidado com o buraco')
+
+    // Visualizando o Resultado    
+    console.log(resultado)
+
+<br/>
+
+Alterando um pouco o exemplo acima para fazer uso do recurso `Currying`:
+
+    function composicao(fn1, fn2, fn3) {
+      return function (valor) {
+         return fn3(fn2(fn1(valor)))
+      }
+    }
+
+    function gritar(texto) {
+       return texto.toUpperCase()
+    }
+
+    function enfatizar(texto) {
+       return `${texto} !!!`
+    }
+
+    function separar(texto) {
+       retrun texto.split('').join(' ')
+    }
+
+    // Com o uso do `Currying`, a chamada pode ser feita da seguinte maneira:
+
+    const resultado = composicao(gritar, enfatizar, separar)('cuidado com o buraco')
+
+    console.log(resultado)
+
+
+    // Dessa forma, temos vários possibilidades de chamar a função `composicao`
+
+    const exagerar = composicao(gritar, enfatizar, separar)
+
+    const resultado1 = exagerado('cuidado com o buraco')
+    const resultado2 = exagerado('pára')
+
+    console.log(resultado1)
+    console.log(resultado2)
+
+
+

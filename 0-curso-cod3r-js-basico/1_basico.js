@@ -1,19 +1,28 @@
-function soma(a = 1, b = 1) {
-    console.log('Resultado Soma: ' + (a + b))
-}
-
-function executar(fn) {
-    if(fn === 'function') {
-        fn()
+function composicao(fn1, fn2, fn3, valor) {
+    return function(valor) {
+        return fn3(fn2(fn1(valor)))
     }
 }
 
+function gritar(texto) {
+    return texto.toUpperCase()
+}
 
-console.log('Soma:')
-soma()
 
-console.log('\nExecutar:')
-executar(soma)
+function enfatizar(texto) {
+    return `${texto} !!!`
+}
 
-//console.log('\nExecutar2:')
-//executar('function')
+
+function separar(texto) {
+    return texto.split('').join(' ')
+}
+
+const exagerar = composicao(gritar, enfatizar, separar)
+
+
+const resultado1 = exagerar('cuidado com o buraco')
+console.log(resultado1)
+
+const resultado2 = exagerar('pára')
+console.log(resultado2)
