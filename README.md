@@ -15,7 +15,8 @@
   * Requisito: Node instalado
   * Atalho execução: `ctrl + alt + n`
 
- 
+ <br/>
+
  ### Comentários
  
  JavaScript aceita as seguintes formas de inserir comentários:
@@ -23,6 +24,7 @@
   * `//`: Comentário para uma linha
   * `/* */`: Comentário multilinhas
 
+<br/>
 
  ### Variáveis
  
@@ -370,6 +372,9 @@ Alterando um pouco o exemplo acima para fazer uso do recurso `Currying`:
 
     console.log(resultado1)
     console.log(resultado2)
+
+
+
 
 
 
