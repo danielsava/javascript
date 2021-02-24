@@ -1,3 +1,10 @@
-let funcaoLoca = false ? () => console.log('verdadeiro')  : () => console.log('falso')
+function adicionar1(a = 1, b = 2) {
+    return a + b
+} 
 
-funcaoLoca()
+const adicionar2 = (a = 3, b = 4) => {
+    return a + b
+}
+
+console.log(adicionar1())
+console.log(adicionar2())

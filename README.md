@@ -84,7 +84,25 @@ Diferente de outros linguagens, como no Java, no Javascript funções podem ser 
     let primeiraNota = notas[0]
     
     let tamanhoArray = notas.length
-    
+
+Abaixo alguns exemplos de como `percorrer` arrays:
+
+      const notas = [6.5, 7.7, 3.2, 8.1, 9.7]
+
+      # ex. 1
+      for(i = 0; i < notas.length; i++) {
+         console.log(notas[i])
+      }
+
+      # ex. 2
+      for(let n of notas) {
+         console.log()n
+      }
+
+      # ex. 3
+      notas.forEach(n => console.log(n))
+
+
   <br/>
 
   #### String Template
@@ -157,7 +175,7 @@ Abaixo segue alguns exemplos:
 
 <br/>
 
-O Javascript possui dois tipos de operadores relacionais de `igualdade`: `==` e `===`. Esse último leva em consideração o `tipo` da variável (igualdade ou diferença estrita).
+O Javascript possui dois tipos de operadores relacionais de `igualdade`: Igualdade de Conteúdo `==` e igualdade estrita `===`. Esse último leva em consideração o `tipo` da variável (igualdade ou diferença estrita).
 
     console.log(2 == 2)          // true
     console.log(2 == '2')        // true
@@ -330,8 +348,8 @@ Em JavaScript existem duas formas de declarar uma função: `Function Declaratio
 
 
     // Function Expression
-    const funcaoAdicionar = function (a, b) { 
-      return a*b 
+    const funcaoAdicionar = function (a, b) {  
+       return a + b 
     }
 
     console.log('Resultado: ' + funcaoAdicionar(3, 9))
