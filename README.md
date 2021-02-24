@@ -2,7 +2,30 @@
 
  "Bem começado, metade feito"
 
- Compatibilidade dos Browsers e Polyfills com ES6
+#### "O core do Javascript é função"
+
+No javascript, `funções` é uma das definições mais importante. Javascript é uma linguagem muito focada em função, não por menos até o `Object` é uma função em Javascript:
+
+      $ console.log(typeof Object) # Retorno: function
+
+Diferente de outros linguagens, como no Java, no Javascript funções podem ser atribuídas à variáveis:
+
+      # Ex. 1
+
+      let a = false ? () => console.log('verdadeiro')  : () => console.log('falso')
+      a()
+
+
+      # Ex. 2
+
+      let b = false ? () => { return 'verdadeiro'}  : () => { return 1234 }
+      b()      
+
+
+<br/>
+
+ ### Compatibilidade dos Browsers e Polyfills com ES6
+
   - https://kangax.github.io/compat-table/es6/
  
  
@@ -28,7 +51,7 @@
 
  ### Variáveis
  
- Variáveis em Javascript são criadas através das palavras reservadas: `var, let e const`.
+ Variáveis em Javascript são criadas através das palavras reservadas: `var`, `let` e `const`.
  
  Os valores das `const` não podem ser alteradas. Javascript é uma linguagem de tipos dinâmicos, por isso 
  o tipo das variáveis são atribuídas em execução de acordo com o conteúdo atribuído. Em Javascript `funções` podem ser
@@ -51,7 +74,9 @@
  necessário.
  
  <br/>
- 
+
+ #### Arrays
+
  Abaixo segue exemplos de `arrays`:
  
     const notas = [6.5, 7.7, 3.2, 8.1, 9.7]
@@ -80,14 +105,23 @@
 
  #### Unários
 
- Operam em cima de uma única variável.
+Operam em cima de uma única variável. Pode ser `posfix` ou `prefix`:
 
-    let a = 3
-    
-    a++   // operador `posfix` 
-    ++a   // operador `prefix`
-    
-    console.log(a) // Resultado: 5
+ - a++ : Operador `posfix` 
+ - ++a : Operador `prefix`
+  
+
+Abaixo segue alguns exemplos:
+
+      # Posfix
+      let a = 1   
+      console.log(a++) // Resultado: 1
+      console.log(a)   // Resultado: 2
+
+      # Prefix
+      let b = 1   
+      console.log(++b) // Resultado: 2
+      console.log(b)   // Resultado: 2
 
  <br/>    
 
@@ -108,10 +142,10 @@
     // Atribuição
     
     let a = 3
-    a += 3 // Forma resumida: a = a + 3
-    a *= 7 // a = a * 7
-    a -= 2 // a = a - 2
-    // Da mesma forma segue para os outros operadores aritméticos
+    a += 3        // Forma resumida: a = a + 3
+    a *= 7        // a = a * 7
+    a -= 2        // a = a - 2
+    
 
 <br/>    
     
@@ -137,7 +171,7 @@ O Javascript possui dois tipos de operadores relacionais de `igualdade`: `==` e 
 
 <br/>
 
- Os operadores `lógicos` são: `! !! && ||`.
+ Os operadores `lógicos` são: `!`, `!!`, `&&`, `||`.
 
     let temSol = true
     let temDinheiro = true
@@ -147,20 +181,21 @@ O Javascript possui dois tipos de operadores relacionais de `igualdade`: `==` e 
 
 <br/>
 
- Javascript converte ´qualquer coisa´para `true` ou `false`:
+ Javascript converte `qualquer coisa` para `true` ou `false`:
 
     if ('teste') { }    // true
     if ('') { }         // false
     if (' ') { }        // true   
+    if (!' ') { }       // false
     if (!!' ') { }      // true
+    if (!!!' ') { }     // false
   
   
  <br/>    
 
  #### Ternário
 
- O operador ternário faz uso do `?` e do `:` que são utilizados para separar as três partes do operador: 
- `<condicao> ? <true> : <false>`.
+ O operador ternário faz uso do `?` e do `:` que são utilizados para separar as três partes do operador:  `<condicao> ? <true> : <false>`.
     
     let temSol = true
     let temDinheiro = true
