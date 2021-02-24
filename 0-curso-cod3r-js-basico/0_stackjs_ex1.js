@@ -1,39 +1,39 @@
-
 function fn5() {
-    console.log("fn5: start")
-    console.log("fn5: end")
+    console.log('fn5: inicio')
+    console.log('fn5: fim')    
 }
 
 function fn4() {
-    console.log("fn4: start")
+    console.log('fn4: inicio')
     fn5()
-    console.log("fn4: end")
+    console.log('fn4: fim')    
 }
 
 function fn3() {
-    console.log("fn3: start")
-    setTimeout( () => fn4(), 3000)
-    console.log("fn3: end")
+    console.log('fn3: inicio')
+    setTimeout(() => fn4(), 5000)
+    console.log('fn3: fim')    
 }
 
 function fn2() {
-    console.log("fn2: start")
+    console.log('fn2: inicio')
     fn3()
-    console.log("fn2: end")
+    console.log('fn2: fim')
 }
 
 function fn1() {
-    console.log("fn1: start")
+    console.log('fn1: inicio')
     fn2()
-    console.log("fn1: end")
+    console.log('fn1: fim')
 }
+
 
 function main() {
-    console.log("main: start")
+    console.log('main: inicio')
     fn1()
-    console.log("main: end")
+    console.log('main: fim')    
 }
 
+console.log('principal: inicio')
 main()
-
-console.log("finalizado")
+console.log('principal: fim')
