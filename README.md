@@ -85,6 +85,8 @@ Diferente de outros linguagens, como no Java, no Javascript funções podem ser 
     
     let tamanhoArray = notas.length
 
+<br/>
+
 Abaixo alguns exemplos de como `percorrer` arrays:
 
       const notas = [6.5, 7.7, 3.2, 8.1, 9.7]
