@@ -75,7 +75,7 @@ Diferente de outros linguagens, como no Java, no Javascript funções podem ser 
  
  <br/>
 
- #### Arrays
+ ### Arrays
 
  Abaixo segue exemplos de `arrays`:
  
@@ -180,7 +180,60 @@ Segue exemplos:
 
  - Reduce
 
- O `reduce`  
+ O `reduce` recebe uma função que conterá dois argumentos: 
+ 
+  - O primeiro argumento é o `acumulador`, ou `acc`: caso não tenha um valor inicial será na primeira iteração com o array o `primeiro elemento` da array. A partir da `segunda iteração`, esse argumento conterá o `retorno desta função`.
+
+  - O segundo elemento são os `próximos elementos do array` que será recebido à cada iteração com o array.
+
+ Um exemplo clássico de `reduce` é a soma:
+
+    # Reduce
+    const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    function somar(a, b) {
+       return a + b
+    }
+
+    const resultado = numeros.reduce(somar)
+
+
+    # Arrow Function
+    const resultado = numeros.reduce( (a, b) => a + b )
+    
+
+    # Ou
+    const funcaoSomar = (a, b) => a + b
+    const resultado = numeros.reduce(funcaoSomar)
+
+<br/>
+
+Utilizando um exemplo um pouco mais complexo para calcular a `média`, utilizando um objeto javascript no acumulador e instanciando este objetos com valores zerados e passando como `valor inicial do acumulador` para o `reduce`:
+
+    # Reduce: média
+
+    const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    function calcularMedia(acc, num) {
+
+       console.log(acc) // Para visualizar a progressao do reduce
+
+       const novoTotal = acc.total + num
+       const novaQtde = acc.qtde + 1
+
+       return {
+          total: novoTotal,
+          qtde: novaQtde,
+          media: novoTotal / novaQtde
+       }
+
+    }
+
+    const valorInicial = {total: 0, qtde: 0, media: 0}
+
+    const resultado = numeros.reduce(calcularMedia, valorInicial)
+
+    const mediaCalculada = resultado.media
 
 
 
