@@ -102,10 +102,92 @@ Abaixo alguns exemplos de como `percorrer` arrays:
       # ex. 3
       notas.forEach(n => console.log(n))
 
+<br/>
+
+### Map, Reduce e Filter em Arrays/Listas
+<br/>
+
+- MAP
+
+O `Map` recebe uma função que receberá como parâmetro cada item do array. O `map` irá chamar essa função para cada item do array e criará um novo array, de mesmo tamanho, com o retorno desta função. 
+
+Portanto, a função passada para o `map` receberá os itens do array e o retorno formará um novo array.
+
+
+Segue exemplos:
+
+    # MAP    
+    const numeros = [3, 4, 7, 1, 9, 7] 
+
+    function dobrar(num) {
+       return num * 2
+    }
+
+    const resultado = numeros.map(dobrar)
+
+    # Utilizando Arrow Functions
+    const resultado = numeros.map(numr => numr * 2)
+
+
+    # Simples com Objetos
+    const produtos = [
+      {nome: "prod1", preco: 23, desconto: 0.2},
+      {nome: "prod1", preco: 120, desconto: 0.3},
+      {nome: "prod1", preco: 3500, desconto: 0.5},
+      {nome: "prod1", preco: 10, desconto: 0.1},
+      {nome: "prod1", preco: 8, desconto: 0.05},
+      {nome: "prod6", preco: 1230, desconto: 0.15}
+    ]
+
+    function getPrecoComDesconto(produto) {
+       return produto.preco * (1 - produto.desconto)
+    }
+
+    const precosComDesconto = produtos.map(getPrecoComDesconto)
+
+    # Utilizando Arrow Functions
+    const precosComDesconto = produtos.map(p => p.preco * (1 - p.desconto))
+
+
+<br/>
+
+ - Filter
+
+ O `filter` recebe uma função que receberá como argumento cada item do array. Esta função `deve retornar um boolean`. O `filter` irá filtrar os elementos do array de acordo com o retorno desta função: `true` permanece e `false` retirado.   
+
+
+    # Filter
+    const notas = [7.1, 8.3, 6.3, 7.7, 9.1, 4.3]
+
+    function aprovarNota(nota) {
+       return nota >= 7
+    }
+
+    const aprovados = notas.filter(aprovarNota)
+
+
+    # Utilizando Arrow Function
+    const aprovarNota = nota => nota >= 7 
+
+    const aprovados = notas.filter(aprovarNota)
+
+
+    # Ou
+    const aprovados = notas.filter(n => n >= 7)
+
+
+<br/>
+
+ - Reduce
+
+ O `reduce`  
+
+
+
 
   <br/>
 
-  #### String Template
+  ### String Template
 
   Abaixo segue alguns exemplos do uso de `Template String`:
 
