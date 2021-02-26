@@ -1,23 +1,56 @@
-const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const produtos = [
+   {nome: 'Caneta', qtde: 10, preco: 7.99},
+   {nome: 'Impressora', qtde: 0, preco: 549.50},
+   {nome: 'Caderno', qtde: 10, preco: 27.10},
+   {nome: 'Lapis', qtde: 10, preco: 5.82},
+   {nome: 'Tesoura', qtde: 10, preco: 19.20}
+]
 
-function calcularMedia(acc, num) {
 
-   const novoTotal = acc.total + num
-   const novaQtde = acc.qtde + 1
+// logFirst(): imprime no console sempre o primeiro elemento da array.
 
-   return {
-      total: novoTotal,
-      qtde: novaQtde,
-      media: novoTotal / novaQtde
+Array.prototype.logFirst = function() {
+   if(this.length > 0)
+      console.log(this[0])
+}
+
+
+// Filter
+Array.prototype.meuFilter = function(fn) {
+
+   const resultado = []
+
+   if(typeof fn !== 'function') 
+      throw  'Não é uma função'
+
+   for(item of this) {
+      if(fn(item))
+         resultado.push(item)
    }
+
+   return resultado
 
 }
 
-const valorInicial = {total: 0, qtde: 0, media: 0}
 
-const resultado = numeros.reduce(calcularMedia, valorInicial)
+// Map
+Array.prototype.meuMap = function(fn) {
 
-const mediaCalculada = resultado.media
+   const resultado = []
+   
+   if(typeof fn !== 'function')
+      throw 'Não é uma função'
+
+   for(item of this)
+      resultado.push(fn(item))
+
+   return resultado
+
+}
+
+
+const resultado = produtos.meuMap(i => i.nome)
 
 console.log(resultado)
-console.log("Média: " + mediaCalculada)
+
+

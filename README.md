@@ -98,7 +98,7 @@ Abaixo alguns exemplos de como `percorrer` arrays:
 
       # ex. 2
       for(let n of notas) {
-         console.log()n
+         console.log(n)
       }
 
       # ex. 3
@@ -107,6 +107,7 @@ Abaixo alguns exemplos de como `percorrer` arrays:
 <br/>
 
 ### Map, Reduce e Filter em Arrays/Listas
+
 <br/>
 
 - MAP
@@ -473,23 +474,33 @@ Na última expressão acima, o trecho da condicional if `typeof fn === 'function
    
 <br/>
 
-Em JavaScript existem duas formas de declarar uma função: `Function Declaration` e `Function Expression`  
+Em JavaScript existem várias formas de declarar uma função: `Function Declaration`, `Function Expression`, `Função Anônima` e `Arrow Function`:
 
 
     // Function Declararion
     function multiplicar(a = 0, b = 0) {
        return a * b
     }
-
     console.log('Resultado: ' + multiplicar(3, 9))
 
 
-    // Function Expression
-    const funcaoAdicionar = function (a, b) {  
+    // Function Expression 
+    const funcaoMultiplicar = function multiplicar(a, b) {  
        return a + b 
     }
+    console.log('Resultado: ' + funcaoMultiplicar(3, 9))
+    
+    
+    // Função Anônima
+    const funcaoMultiplicar = function (a, b) {  
+       return a + b 
+    }
+    console.log('Resultado: ' + funcaoMultiplicar(3, 9))
 
-    console.log('Resultado: ' + funcaoAdicionar(3, 9))
+
+    // Arrow Function
+    const funcaoMultiplicar = (a, b) => a * b 
+    console.log('Resultado: ' + funcaoMultiplicar(3, 9))
 
 
 Nos exemplos acima, em `Function Expression` foi utilizada uma função anônima (não possui nome) por questões de praticidade. Poderia ser dado qualquer nome à função, mas para executar ela deve ser chamada somente pelo nome da varíavel a qual foi atribuída. 
@@ -564,6 +575,74 @@ Alterando um pouco o exemplo acima para fazer uso do recurso `Currying`:
     console.log(resultado2)
 
 
+<br/>
+
+### Prototype: estendendo as funcionalidades das classes JavaScript
+
+Com o uso de `prototypes` podemos estender, ou criar novas, funcionalidades para as classes Javascript.
+
+No exemplo abaixo, vamos estender as funcionalidades da Classe `Array`, criando um método novo, que irá imprimir sempre o primeiro elemento (`logFirst`), e re-escrevendo nossos métodos de `map`, `filter` e `reduce`:
+
+ - OBS: Em virtude do escopo das `Arrow Function` não abranger o `'this'`, é melhor utilizar `funções declarativas` com prototypes.
+
+Segue:
+
+      const produtos = [
+         {nome: 'Caneta', qtde: 10, preco: 7.99},
+         {nome: 'Impressora', qtde: 0, preco: 549.50},
+         {nome: 'Caderno', qtde: 10, preco: 27.10},
+         {nome: 'Lapis', qtde: 10, preco: 5.82},
+         {nome: 'Tesoura', qtde: 10, preco: 19.20}
+      ]
+
+
+      // 'logFirst()': imprime no console o primeiro elemento da array.
+      Array.prototype.logFirst = function() {
+         if(this.length > 0)
+            console.log(this[0])
+      }
+
+      produtos.logFirst() // Saída: { nome: 'Caneta', qtde: 10, preco: 7.99 }
+
+
+      // Filter
+      Array.prototype.meuFilter = function(fn) {
+
+         const resultado = []
+
+         if(typeof fn !== 'function') 
+            throw 'Não é uma função'
+
+         for(item of this) {
+            if(fn(item))
+               resultado.push(item)
+         }
+
+         return resultado
+
+      }
+
+      const filtrados = produtos.meuFilter( i => i.preco > 8)
+      console.log(filtrados)
+
+
+      // Map
+      Array.prototype.meuMap = function(fn) {
+
+         const resultado = []
+         
+         if(typeof fn !== 'function')
+            throw 'Não é uma função'
+
+         for(item of this)
+            resultado.push(fn(item))
+
+         return resultado
+
+      }
+
+      const resultado = produtos.meuMap(i => i.nome)
+      console.log(resultado)
 
 
 
