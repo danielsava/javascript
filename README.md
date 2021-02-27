@@ -36,7 +36,9 @@ Diferente de outros linguagens, como no Java, no Javascript funções podem ser 
   
   * Plugin: Code Runner 
   * Requisito: Node instalado
-  * Atalho execução: `ctrl + alt + n`
+  * Atalhos: 
+      * Run Code:  `ctrl + alt + n` (executar)
+      * Stop Code: `ctrl + alt + m` (stopar)
 
  <br/>
 
