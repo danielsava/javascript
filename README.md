@@ -608,12 +608,12 @@ Segue:
       // Filter
       Array.prototype.meuFilter = function(fn) {
 
-         const resultado = []
-
          if(typeof fn !== 'function') 
             throw 'Não é uma função'
 
-         for(item of this) {
+         const resultado = []
+
+         for(let item of this) {
             if(fn(item))
                resultado.push(item)
          }
@@ -629,12 +629,12 @@ Segue:
       // Map
       Array.prototype.meuMap = function(fn) {
 
-         const resultado = []
-         
          if(typeof fn !== 'function')
             throw 'Não é uma função'
 
-         for(item of this)
+         const resultado = []
+
+         for(let item of this)
             resultado.push(fn(item))
 
          return resultado
@@ -643,6 +643,51 @@ Segue:
 
       const resultado = produtos.meuMap(i => i.nome)
       console.log(resultado)
+
+
+      // Reduce
+      Array.prototype.meuReduce = function(fn, valorInicial) {
+
+         if(typeof fn !== 'function')
+            throw 'Não é uma função'
+
+         let acumulado = undefined
+
+         if(valorInicial !== undefined) {
+            acumulado = valorInicial
+         } else {
+            acumulado = this[0]
+            var pularPrimeiroItem = true
+         }
+            
+         for(let i of this) {
+
+            if(pularPrimeiroItem) {
+               pularPrimeiroItem = false;
+               continue;
+            }
+            acumulado = fn(acumulado, i)
+            
+         }
+         
+         return acumulado
+
+      }
+
+      const numeros = [1, 2, 3, 4]
+
+      const soma = numeros.meuReduce((acc, i) => acc + i, 0)
+
+      console.log(soma)
+
+
+      // Utilizando todos o métodos criados no prototype do Array
+      const r = produtos
+         .meuFilter(i => i.qtde > 0)
+         .meuMap(i => i.qtde)
+         .meuReduce((a, b) => a + b)
+
+      console.log(r) 
 
 
 
