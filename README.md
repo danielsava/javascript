@@ -70,6 +70,28 @@ Diferente de outros linguagens, como no Java, no Javascript funções podem ser 
     
     console.log(d) // resultado: Teste 2
     
+
+<br/>
+
+ ### Objetos
+
+Abaixo segue exemplo simples de um objeto em Javascript:
+
+
+    const aluno = { nome: 'José', score: 6.4}
+    
+    console.log(aluno)
+   
+
+    const alunos = [
+      { nome: 'José',  score: 6.4},
+      { nome: 'Maria', score: 8.6},
+      { nome: 'Pedro', score: 9.1},
+    ]
+
+    console.log(alunos)  
+
+
  <br/>
   
  As boas práticas do JavaScript priorizam o uso de `constantes`. Utilizar `var, let` somente quando realmente
@@ -241,6 +263,31 @@ Utilizando um exemplo um pouco mais complexo para calcular a `média`, utilizand
     const mediaCalculada = resultado.media
 
 
+O `reduce` recebe outros arugmentos, além do acumulador e o elemento. No terceiro argumento ele recebe o `index` do array e no quarto o `próprio array`. Portanto, uma outra formad e calcular a média do exemplo acima seria: 
+
+
+      const numrs = [1, 2, 3, 4, 5, 6]
+
+      const calcularMedia = (acc, el, index, array) => {
+
+      let resultado = {
+         soma: acc.soma + el,
+         qtde: ++acc.qtde,
+         media: 0
+      }
+
+      resultado.media = resultado.soma / resultado.qtde
+
+      console.log(`Laço ${index}`, resultado)
+      console.log(`Array`, array)
+
+      return resultado
+
+   }
+
+   const resultado = numrs.reduce(calcularMedia, {soma: 0, qtde: 0, media: 0})
+
+   console.log('Média: ', resultado.media)
 
 
   <br/>
