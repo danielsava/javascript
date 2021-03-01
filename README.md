@@ -590,7 +590,7 @@ No Javascript, funcões podem ser passada para outras funcões como argumentos e
 Outro exemplo, neste caso utilizando `Higher Order Function` com ['Currying'](https://rodrigorgs.github.io/aulas/mata56/aula14-currying):
 
 
-      // Sem Normal, sem 'Currying'
+      // Normal, sem 'Currying'
       function finalPrice(tax, price) {
          return price * (1 + tax)
       }
