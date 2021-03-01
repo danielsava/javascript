@@ -404,7 +404,9 @@ O Javascript possui dois tipos de operadores relacionais de `igualdade`: Igualda
 
     notas.forEach(nota => console.log(nota))
 
-    
+
+<br/>
+
 ### Funções
 
 Função é o recurso mais importante da linguagem Javascript. Quase tudo, senão tudo, no JavaScript é uma função.
@@ -472,7 +474,7 @@ Javascript também suporta inserir uma `função` como argumento de funções:
     }
 
 
-Na última expressão acima, o trecho da condicional if `typeof fn === 'function'` é igual à `typeof(fn) === 'function'`. Isso porque o retorno da expressão `typeof(fn)` é uma string igual à `function` caso o argumento `fn` realmente seja uma função.
+Na última expressão acima, o trecho da condicional if `typeof fn === 'function'` é o mesmo que `typeof(fn) === 'function'`. Isso porque o retorno da expressão `typeof(fn)` é uma string igual à `function` caso o argumento `fn` realmente seja uma função.
    
 <br/>
 
@@ -509,7 +511,68 @@ Nos exemplos acima, em `Function Expression` foi utilizada uma função anônima
 
 <br/>
 
-#### Composição de Funções
+### Spread/Rest
+
+O operador `spread` é utilizado através do uso da anotação `'...'` antes da declaração do argumento. Isso significa que a função pode receber uma quantidade variável de argumentos. O `spread` transforma o argumento em um `array`. Abaixo segue exemplo:
+
+
+      function logNums(... nums) {
+
+         console.log('Spred é um array: ', Array.isArray(nums))
+
+         console.log(nums)
+
+         for(let n of nums)
+            console.log(n)
+
+      }
+
+      logNums(1)
+      logNums(1, 2, 3)
+      logNums(1, 2, 3, 4, 5)
+
+
+### Desafio: Função Range
+
+Função que imprime um intervalor de numeros, crescente ou descrente, com saltos pré-definidos:
+
+      function range(a, b, c) {
+
+         const r = []
+
+         if(a === undefined)
+            return r
+
+         if(c === undefined) // Pode ser substituído atribuindo valor default no argumento da função
+            c = 1;
+
+         const valorInicial = b === undefined ? 1 : a;
+         const valorFinal = b === undefined ? a : b;
+         var salto = valorInicial <= valorFinal ? Math.abs(c) : -Math.abs(c);
+
+         const isCrescente = salto >= 0
+
+         console.log('Inicio', valorInicial)
+         console.log('Final', valorFinal)
+         console.log('Salto', salto)
+         console.log('isCrescente', isCrescente)
+
+         for(let i = valorInicial; isCrescente ? i <= valorFinal : i >= valorFinal; i+=salto)
+            r.push(i)
+
+         return r
+
+      }
+
+      console.log(range(5))
+      console.log(range(5, 10))
+      console.log(range(5, 10, 2))
+      console.log(range(10, -5, 3))
+
+
+<br/>
+
+### Composição de Funções
 
 <br/>
     
