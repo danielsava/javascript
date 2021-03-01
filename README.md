@@ -532,6 +532,93 @@ O operador `spread` é utilizado através do uso da anotação `'...'` antes da 
       logNums(1, 2, 3, 4, 5)
 
 
+<br/>
+
+### JavaScript is 'First Class Function'
+
+A programming language is said to have First-Class Functions when functions in 
+that language are treated like `any other variable`.
+ 
+Este conceito é fundamental da `programação funcional`. E podemos classificar o Javascript como uma linguagem de programação First Class Function pois podemos, em resumo, atribuir funções à variáveis através das `Functions Expression`:
+
+
+      /* Function Expression */
+      const func1 = function funcaoQualquer(a, b) { return a + b }
+      let resultado1 = func1(1, 2)
+      console.log(resultado1)
+
+      /* Function Expression: neste caso utilizando Função Anônima */
+      const func2 = function (a, b) { return a + b }
+      let resultado2 = func1(2, 3)
+      console.log(resultado2)
+
+      /* Function Expression: neste caso utilizando Arrow Function */
+      const func3 = (a, b) =>  a + b
+      let resultado3 = func1(3, 4)
+      console.log(resultado3)
+
+<br/>
+
+### Higher Order Function
+
+Function that operate on other functions, either by taking them as arguments or by returning them, are called 'Higher Order Function'.
+
+No Javascript, funcões podem ser passada para outras funcões como argumentos e funções podem retornar outras funções:
+
+
+      function run(fn) {
+         fn()
+      }
+
+      function sayHello() {
+         console.log('Hello Function as Argument´s !!!')
+      }
+
+      run(sayHello)
+
+      run(function() {
+         console.log('run !!!')
+      })
+
+      run(() => console.log('Run Arrow !!!'))
+
+<br/>
+
+### Higher Order Function e Currying
+
+
+Outro exemplo, neste caso utilizando `Higher Order Function` com ['Currying'](https://rodrigorgs.github.io/aulas/mata56/aula14-currying):
+
+
+      // Sem Normal, sem 'Currying'
+      function finalPrice(tax, price) {
+         return price * (1 + tax)
+      }
+
+
+      // Currying
+      functio finalPrice(tax) {
+         return function(price) {
+            return price * (1 + tax)
+         }
+      }
+
+      // Executando 
+      const preco1 = finalPrice(0.0875)(25)
+      const preco2 = finalPrice(0.0875)(50)
+      const preco3 = finalPrice(0.0875)(100)
+
+
+      // Vantagens do Currying
+      const nycFinalPrice = finalPrice(0.0875)
+
+      const preco1 = nycFinalPrice(25)
+      const preco2 = nycFinalPrice(50)
+      const preco3 = nycFinalPrice(100)
+
+
+<br/>
+
 ### Desafio: Função Range
 
 Função que imprime um intervalor de numeros, crescente ou descrente, com saltos pré-definidos:
