@@ -889,5 +889,18 @@ Segue:
       console.log(r) 
 
 
+<br/>
 
+### Obsever: Padrão de Projeto
+
+O `Observer` é um dos padrões de projeto mais utilizado na Web. Atualmente, a plataforma de desenvolvido web é o Javascript. E o Javascript é uma linguagem fortemente baseada no padrão `Observer`. 
+
+ No Javascript, além do RxJS, o padrão `Observer` é normalmente referido como `Event Handler`, enquanto no `Java` é utilizado o termo `Listener`. Apesar das nomenclaturas distintas, eles representam o mesmo padrão: `Observer`.
+
+ Referências:
+ 
+ - Video: [O Padrão de Projeto Mais Utilizado da Web](https://www.youtube.com/watch?v=REqVImw8Wgo&t=0s)
+ - Video: [Elementos do Angular #02 [2020]](https://www.youtube.com/watch?v=LjNS1BgyEf4&t=0s) 
+
+ asdf
 
