@@ -967,7 +967,7 @@ Neste caso, para executar:
 
 #### 'Axios': Cliente HTTP
 
-Apesar do RxJs ter um operador http, o `ajax`, foi utilizado o Axios como cliente http por questões de praticidade problemas de `CORS`. Para instalação:
+Apesar do RxJs ter um operador http, o `ajax`, foi utilizado o Axios como cliente http por questões de praticidade e problemas de `CORS`. Para instalação:
 
     npm i axios
 
