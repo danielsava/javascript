@@ -949,6 +949,20 @@ Com o script de inicialização configurado, o arquivo 'api.json' criado, para `
     npm start
 
 
+Ou caso crie uma entrada diferente para os scripts npm, como por exemplo:
+
+    ...
+    "scripts": {
+       "jserv": "json-server --watch api.json --port 3001"
+    }
+    ...
+
+
+Neste caso, para executar:
+
+    npm run jserv
+
+
 <br/>
 
 #### 'Axios': Cliente HTTP
