@@ -1,0 +1,23 @@
+
+# Indica este arquivo está na raiz do projeto e é o principal arquivo de configuração
+root = true
+
+
+## Arquivos JavaScript
+[*.js]
+
+# Encoding
+charset = utf-8
+
+# lf(unix), crlf(windows), cr(macos)
+#end_of_line = lf 
+
+# Nova linha deve ser criada ao final
+#insert_final_newline = true 
+
+# Configura tab por espaços
+#indent_style = space 
+#indent_size = 2
+
+# Remove espaços em branco ao fim de todas as linhas
+trim_trailing_whitespace = true 

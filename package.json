@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/danielsava/javascript/issues"
   },
-  "homepage": "https://github.com/danielsava/javascript#readme"
+  "homepage": "https://github.com/danielsava/javascript#readme",
+  "dependencies": {
+    "rxjs": "^6.6.6"
+  }
 }
