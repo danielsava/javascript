@@ -891,7 +891,7 @@ Segue:
 
 <br/>
 
-### Obsever: Padrão de Projeto
+### Observer: Padrão de Projeto
 
 O `Observer` é um dos padrões de projeto mais utilizado na Web. Atualmente, a plataforma de desenvolvido web é o Javascript. E o Javascript é uma linguagem fortemente baseada no padrão `Observer`. 
 
@@ -902,5 +902,62 @@ O `Observer` é um dos padrões de projeto mais utilizado na Web. Atualmente, a 
  - Video: [O Padrão de Projeto Mais Utilizado da Web](https://www.youtube.com/watch?v=REqVImw8Wgo&t=0s)
  - Video: [Elementos do Angular #02 [2020]](https://www.youtube.com/watch?v=LjNS1BgyEf4&t=0s) 
 
- asdf
+
+<br/>
+
+### Observer: RxJs
+
+Para fazer uso da api RxJs, será necessário inicializar o `npm` no projeto para fazer o download das dependências. 
+
+Para `inicializar o npm`:
+
+    npm init -y 
+
+
+<br/>
+
+Com o `npm instalado` e configurado no projeto, é só instalar as dependências do `RxJs`:
+
+    npm i rxjs
+
+<br/>
+
+Para os exemplos com `rxjs`, foi instalado também o `json-server`:
+
+    npm i json-server
+
+<br/>
+
+Para simulação de `dados na API do Json Server`, foi utilizado o seguinte arquivo json:
+
+ - [Json Films](https://gist.github.com/saniyusuf/406b843afdfb9c6a86e25753fe2761f4)
+
+
+Foi criado um arquivo `api.json` e copiado para dentro dele o conteúdo do arquivo acima.
+
+Foi criado no npm um `script de inicialização` para o Json Server. Para isso foi adicionado a seguinte entrada no arquivo `package.json`:
+
+
+    ...
+    "scripts": {
+       "start": "json-server --watch api.json --port 3001"
+    }
+    ...
+
+Com o script de inicialização configurado, o arquivo 'api.json' criado, para `inicializar o json-server` basta executar o script npm criado. Neste caso:
+
+    npm start
+
+
+<br/>
+
+#### 'Axios': Cliente HTTP
+
+Apesar do RxJs ter um operador http, o `ajax`, foi utilizado o Axios como cliente http por questões de praticidade problemas de `CORS`. Para instalação:
+
+    npm i axios
+
+
+
+<br/>
 

@@ -1,0 +1,20 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "\"Bem começado, metade feito\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielsava/javascript.git"
+  },
+  "keywords": [],
+  "author": "Daniel Sava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielsava/javascript/issues"
+  },
+  "homepage": "https://github.com/danielsava/javascript#readme"
+}
