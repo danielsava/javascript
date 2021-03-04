@@ -3,10 +3,11 @@
  * 
  */
 
+
 const { Observable, noop } = require("rxjs")
 
 
-// Criando uma função que funcionará como o operador 'from' do RxJs
+// Função que funcionará como o operador 'from' do RxJs
 
 function fromArray(array) {
 
@@ -20,9 +21,10 @@ function fromArray(array) {
 
 const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-fromArray(numeros).subscribe( 
+fromArray(numeros)
+    .subscribe( 
         n => console.log(n),  
-        noop,                           // Utilitário do RxJs. É um função vazia que retorna 'void'
+        noop,                           // Utilitário do RxJs para 'sem operacao'. É um função vazia que retorna 'void'. 
         () => console.log('Finalizado !!!')
     )
 
